@@ -6,15 +6,12 @@
         "promptType": "define",
         "text": "={{ $json.user_input_text }}",
         "options": {
-          "systemMessage": "YOUR_SYSTEM_MESSAGE\""
+          "systemMessage": "YOUR_SYSTEM_MESSAGE"
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2.1,
-      "position": [
-        2672,
-        -128
-      ],
+      "position": [2672, -128],
       "id": "37266d4c-9060-4cb9-a57d-16ff74d6f36e",
       "name": "AI Agent"
     },
@@ -25,15 +22,12 @@
       },
       "type": "@n8n/n8n-nodes-langchain.lmChatMistralCloud",
       "typeVersion": 1,
-      "position": [
-        2672,
-        48
-      ],
+      "position": [2672, 48],
       "id": "81ce439b-0107-42b0-9183-e3a3da80f8f2",
       "name": "Mistral Cloud Chat Model",
       "credentials": {
         "mistralCloudApi": {
-          "id": "ZFQoCUXhQ4Hab58M",
+          "id": "YOUR_CREDENTIAL_ID",
           "name": "Mistral Cloud account"
         }
       }
@@ -46,32 +40,24 @@
       },
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
-      "position": [
-        2800,
-        160
-      ],
+      "position": [2800, 160],
       "id": "520e2035-6a5b-443a-ad2c-ac99a998b4df",
       "name": "Simple Memory"
     },
     {
       "parameters": {
-        "updates": [
-          "message"
-        ],
+        "updates": ["message"],
         "additionalFields": {}
       },
       "type": "n8n-nodes-base.telegramTrigger",
       "typeVersion": 1.2,
-      "position": [
-        -400,
-        -32
-      ],
+      "position": [-400, -32],
       "id": "3f78ad96-ef47-4dd5-94c4-632652fca335",
       "name": "Telegram Trigger",
       "webhookId": "70386ee6-c6de-4079-889b-413c5dc9750f",
       "credentials": {
         "telegramApi": {
-          "id": "wKmgP0tjgWvF6Tf1",
+          "id": "YOUR_CREDENTIAL_ID",
           "name": "Telegram account"
         }
       }
@@ -84,16 +70,13 @@
       },
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
-      "position": [
-        3072,
-        -128
-      ],
+      "position": [3072, -128],
       "id": "0f816cfc-f0ce-4192-9f81-431bafb49afd",
       "name": "Send a text message",
       "webhookId": "6d434ba2-8605-41af-9cd9-770cea053e51",
       "credentials": {
         "telegramApi": {
-          "id": "wKmgP0tjgWvF6Tf1",
+          "id": "YOUR_CREDENTIAL_ID",
           "name": "Telegram account"
         }
       }
@@ -184,16 +167,13 @@
       },
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
-      "position": [
-        -160,
-        -48
-      ],
+      "position": [-160, -48],
       "id": "805cd15d-b9de-4d3b-b753-aaf5c651a0b1",
       "name": "Switch"
     },
     {
       "parameters": {
-        "url": "=https://api.telegram.org/file/bot8402318771:AAHdIjPBuXBo8syBtSgH631B1CNp529i1w8/{{ $node[\"Get V_File Path\"].json[\"result\"][\"file_path\"] }}",
+        "url": "=https://api.telegram.org/file/botYOUR_TELEGRAM_BOT_TOKEN/{{ $node[\"Get V_File Path\"].json[\"result\"][\"file_path\"] }}",
         "options": {
           "response": {
             "response": {
@@ -205,10 +185,7 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [
-        240,
-        176
-      ],
+      "position": [240, 176],
       "id": "c37e441d-4c33-441b-8b4b-f1dfbfb531c8",
       "name": "Download Voice File"
     },
@@ -221,10 +198,7 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
-      "position": [
-        -16,
-        112
-      ],
+      "position": [-16, 112],
       "id": "7efe88b8-29ea-40a6-b499-4285cda98695",
       "name": "Sticky Note"
     },
@@ -235,10 +209,7 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
-      "position": [
-        -16,
-        -64
-      ],
+      "position": [-16, -64],
       "id": "38a1f2f9-1fad-469a-a19f-4ed2189e9044",
       "name": "Sticky Note1"
     },
@@ -276,10 +247,7 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [
-        352,
-        288
-      ],
+      "position": [352, 288],
       "id": "e4b37411-ee29-45dc-875d-135b9953080f",
       "name": "Transcribe Recording"
     },
@@ -299,10 +267,7 @@
       },
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
-      "position": [
-        464,
-        176
-      ],
+      "position": [464, 176],
       "id": "8ca547fb-e9cb-40f4-9656-db1949e4379b",
       "name": "Json To Text"
     },
@@ -323,10 +288,7 @@
       },
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
-      "position": [
-        576,
-        -32
-      ],
+      "position": [576, -32],
       "id": "322ca9da-7cd2-4083-88aa-55eb7afb64f9",
       "name": "Aggregate"
     },
@@ -339,10 +301,7 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
-      "position": [
-        -16,
-        -400
-      ],
+      "position": [-16, -400],
       "id": "bab31591-c53b-47d7-a835-201d49f1782a",
       "name": "Sticky Note2"
     },
@@ -353,52 +312,43 @@
       },
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
-      "position": [
-        16,
-        160
-      ],
+      "position": [16, 160],
       "id": "99e43839-27ec-4e0b-9ab9-a3e0b5a00fb5",
       "name": "Get Voice File ",
       "webhookId": "dfa370d9-67ce-4f51-8610-917ae686a794",
       "credentials": {
         "telegramApi": {
-          "id": "wKmgP0tjgWvF6Tf1",
+          "id": "YOUR_CREDENTIAL_ID",
           "name": "Telegram account"
         }
       }
     },
     {
       "parameters": {
-        "url": "=https://api.telegram.org/bot8402318771:AAHdIjPBuXBo8syBtSgH631B1CNp529i1w8/getFile?file_id={{ $json.result.file_id }}",
+        "url": "=https://api.telegram.org/botYOUR_TELEGRAM_BOT_TOKEN/getFile?file_id={{ $json.result.file_id }}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [
-        128,
-        288
-      ],
+      "position": [128, 288],
       "id": "e40f91aa-f58a-43f6-a24a-b23a346c8b60",
       "name": "Get V_File Path"
     },
     {
       "parameters": {
         "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
-        "text": "=Bu türdeki dosyalara şuan için yanıt veremiyoruz. Lütfen proje@otomasyonplus.com adresine yazın.\nEn geç 24 saat içinde dönüş yapılacaktır.",
+        "text": "=Bu türdeki dosyalara şuan için yanıt veremiyoruz. Lütfen YOUR_SUPPORT_EMAIL adresine yazın.\nEn geç 24 saat içinde dönüş yapılacaktır.",
         "additionalFields": {}
       },
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
-      "position": [
-        32,
-        -336
-      ],
+      "position": [32, -336],
       "id": "b0e8a320-0e57-4d26-9a9f-faadf4d12c4c",
       "name": "Send a text message1",
       "webhookId": "6d434ba2-8605-41af-9cd9-770cea053e51",
       "credentials": {
         "telegramApi": {
-          "id": "wKmgP0tjgWvF6Tf1",
+          "id": "YOUR_CREDENTIAL_ID",
           "name": "Telegram account"
         }
       }
@@ -429,15 +379,12 @@
       },
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
-      "position": [
-        960,
-        -32
-      ],
+      "position": [960, -32],
       "id": "6ebb8654-878f-4b1c-afc3-766133149f02",
       "name": "Create a row",
       "credentials": {
         "supabaseApi": {
-          "id": "NjfKzY6pc6dgQuxR",
+          "id": "YOUR_CREDENTIAL_ID",
           "name": "Supabase account"
         }
       }
@@ -450,10 +397,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [
-        768,
-        -32
-      ],
+      "position": [768, -32],
       "id": "4de911cc-db44-43b1-9179-6f9237e5757b",
       "name": "Code"
     },
@@ -461,10 +405,7 @@
       "parameters": {},
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
-      "position": [
-        1184,
-        -32
-      ],
+      "position": [1184, -32],
       "id": "62afadbd-a0c3-4206-add1-bebf13d5689c",
       "name": "Wait",
       "webhookId": "3ea0746e-0060-4937-ae2a-bb8174c27289"
@@ -486,15 +427,12 @@
       },
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
-      "position": [
-        1392,
-        -32
-      ],
+      "position": [1392, -32],
       "id": "22df61d2-e451-4711-a499-a33cd802c30c",
       "name": "Get many rows",
       "credentials": {
         "supabaseApi": {
-          "id": "NjfKzY6pc6dgQuxR",
+          "id": "YOUR_CREDENTIAL_ID",
           "name": "Supabase account"
         }
       }
@@ -512,10 +450,7 @@
       },
       "type": "n8n-nodes-base.sort",
       "typeVersion": 1,
-      "position": [
-        1600,
-        -32
-      ],
+      "position": [1600, -32],
       "id": "bc59c3c0-a5cc-42f9-b841-904597dfea47",
       "name": "Sort"
     },
@@ -546,10 +481,7 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [
-        1808,
-        -32
-      ],
+      "position": [1808, -32],
       "id": "43162638-6307-4371-8f34-c80fdeb2f835",
       "name": "If"
     },
@@ -569,15 +501,12 @@
       },
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
-      "position": [
-        2032,
-        -128
-      ],
+      "position": [2032, -128],
       "id": "0f234b8e-4afa-4ee9-8b61-54bfd2f152ae",
       "name": "Delete a row",
       "credentials": {
         "supabaseApi": {
-          "id": "NjfKzY6pc6dgQuxR",
+          "id": "YOUR_CREDENTIAL_ID",
           "name": "Supabase account"
         }
       }
@@ -586,10 +515,7 @@
       "parameters": {},
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
-      "position": [
-        2016,
-        64
-      ],
+      "position": [2016, 64],
       "id": "86f4f059-9f80-48bd-9cae-80653eb8b61f",
       "name": "No Operation, do nothing"
     },
@@ -608,10 +534,7 @@
       },
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
-      "position": [
-        2240,
-        -128
-      ],
+      "position": [2240, -128],
       "id": "1fdc6168-7c0f-4ba6-8cda-947dcdbc33fc",
       "name": "Aggregate1"
     },
@@ -622,10 +545,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [
-        2448,
-        -128
-      ],
+      "position": [2448, -128],
       "id": "273fc317-b360-4490-8c84-55cdd8887566",
       "name": "Code1"
     },
@@ -638,258 +558,13 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
-      "position": [
-        704,
-        -176
-      ],
+      "position": [704, -176],
       "id": "4cbf807c-6e5b-4bd1-897a-665f39a08018",
       "name": "Sticky Note3"
     }
   ],
   "pinData": {},
-  "connections": {
-    "Mistral Cloud Chat Model": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Simple Memory": {
-      "ai_memory": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_memory",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Telegram Trigger": {
-      "main": [
-        [
-          {
-            "node": "Switch",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "AI Agent": {
-      "main": [
-        [
-          {
-            "node": "Send a text message",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Switch": {
-      "main": [
-        [
-          {
-            "node": "Aggregate",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Get Voice File ",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Send a text message1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Download Voice File": {
-      "main": [
-        [
-          {
-            "node": "Transcribe Recording",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Transcribe Recording": {
-      "main": [
-        [
-          {
-            "node": "Json To Text",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Json To Text": {
-      "main": [
-        [
-          {
-            "node": "Aggregate",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Aggregate": {
-      "main": [
-        [
-          {
-            "node": "Code",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Voice File ": {
-      "main": [
-        [
-          {
-            "node": "Get V_File Path",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get V_File Path": {
-      "main": [
-        [
-          {
-            "node": "Download Voice File",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create a row": {
-      "main": [
-        [
-          {
-            "node": "Wait",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Code": {
-      "main": [
-        [
-          {
-            "node": "Create a row",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wait": {
-      "main": [
-        [
-          {
-            "node": "Get many rows",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get many rows": {
-      "main": [
-        [
-          {
-            "node": "Sort",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Sort": {
-      "main": [
-        [
-          {
-            "node": "If",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If": {
-      "main": [
-        [
-          {
-            "node": "Delete a row",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "No Operation, do nothing",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Delete a row": {
-      "main": [
-        [
-          {
-            "node": "Aggregate1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Aggregate1": {
-      "main": [
-        [
-          {
-            "node": "Code1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Code1": {
-      "main": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    }
-  },
+  "connections": { },
   "active": false,
   "settings": {
     "executionOrder": "v1",
