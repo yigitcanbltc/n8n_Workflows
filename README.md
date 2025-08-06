@@ -5,6 +5,7 @@ The goal is to automate repetitive tasks, integrate API services, and improve pr
 
 ## 📦 Contents
 - 📬 Telegram AI Customer Service
+- 📋 HR Application Assessment Automation
 
 ## 🧩 Requirements
 You can use the workflows by importing the `.json` files into your [n8n](https://n8n.io) instance via the **Import File** option, and configuring the required API connections.
